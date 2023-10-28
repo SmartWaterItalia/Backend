@@ -16,7 +16,7 @@ public class TipoTecnico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private int id;
 
     @Column(name="nome")
     @NotNull

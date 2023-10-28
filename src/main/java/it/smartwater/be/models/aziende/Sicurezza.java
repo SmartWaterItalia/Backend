@@ -16,9 +16,9 @@ public class Sicurezza {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private int id;
 
-    @Column(name="nome")
+    @Column(name="nome", unique = true)
     @NotNull
     private String nome;
 

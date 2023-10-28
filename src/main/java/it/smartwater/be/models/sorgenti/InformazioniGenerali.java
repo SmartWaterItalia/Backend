@@ -20,14 +20,14 @@ public class InformazioniGenerali {
     @Column(name = "id")
     private long id;
 
-    @Column(name="nome")
+    @Column(name="nome", length = 64)
     @NotNull
     private String nome;
 
-    @Column(name="descrizione")
+    @Column(name="descrizione", length = 1024)
     private String descrizione;
 
-    @Column(name="proprietario")
+    @Column(name="proprietario", length = 64)
     private String proprietario;
 
     @Column(name="dataInserimento")

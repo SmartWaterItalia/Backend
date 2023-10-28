@@ -18,7 +18,7 @@ public class Immagine {
     @Column(name = "id")
     private long id;
 
-    @Column(name="path")
+    @Column(name="path", unique = true)
     @NotNull
     private String path;
 

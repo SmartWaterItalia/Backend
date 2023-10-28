@@ -33,7 +33,7 @@ public class Manutenzione {
 
     @Column(name="idTipoManutenzione")
     @NotNull
-    private long idTipoManutenzione;
+    private int idTipoManutenzione;
 
 
     @OneToOne

@@ -18,10 +18,10 @@ public class Tipo {
     @Column(name = "id")
     private int id;
 
-    @Column(name="nome")
+    @Column(name="nome", unique = true ,length = 32)
     @NotNull
     private String nome;
 
-    @Column(name="descrizione")
+    @Column(name="descrizione", length = 128)
     private String descrizione;
 }

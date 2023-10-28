@@ -1,5 +1,6 @@
-package it.smartwater.be.repositories;
+package it.smartwater.be.repositories.utenti;
 
+import it.smartwater.be.models.utenti.ImmagineValutazione;
 import it.smartwater.be.models.utenti.Valutazione;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.data.domain.Page;

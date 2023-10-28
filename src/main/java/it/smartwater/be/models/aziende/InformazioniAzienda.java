@@ -18,11 +18,11 @@ public class InformazioniAzienda {
     @Column(name = "id")
     private Long id;
 
-    @Column(name="nome")
+    @Column(name="nome", length = 100)
     @NotNull
     private String nome;
 
-    @Column(name="ragioneSociale")
+    @Column(name="ragioneSociale", length = 100)
     @NotNull
     private String ragioneSociale;
 

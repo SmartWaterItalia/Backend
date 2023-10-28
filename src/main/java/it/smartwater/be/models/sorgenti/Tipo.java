@@ -16,13 +16,13 @@ public class Tipo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private int id;
 
-    @Column(name="nome")
+    @Column(name="nome", unique = true, length = 32)
     @NotNull
     private String nome;
 
-    @Column(name="descrizione")
+    @Column(name="descrizione", length = 128)
     private String descrizione;
 
     @Column(name="presenteInNatura")

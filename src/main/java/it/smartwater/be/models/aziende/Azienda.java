@@ -35,19 +35,4 @@ public class Azienda {
     @JoinColumn(name = "idContattiAzienda", referencedColumnName = "id", table = "contatti_azienda")
     private ContattiAzienda contattiAzienda;
 
-    /*
-
-Indirizzo [id, Via, Civico, Sezione, idLuogo]
-Luogo [id, Stato, Regione, Provincia, Comune, Postale]
-UtenteTecnico [id, idUtente, idAzienda]
-Manutenzione [id, data, descrizione, idUtenteTecnico, idTipoManutenzione]
-TipoManutenzione [id, nome, descrizione]
-TipoTecnico [id, nome, descrizione, idAzienda]
-Sicurezza [id, nome, descrizione] //Indica il permesso
-PermessoTecnico [id, idTipoTecnico, idSicurezza]
-// L’id azienda lega il tipoTecnico, che è univoco. UtenteTecnico ha un idTipoTecnico e sicurezze è legata solo dall’idTipoTecnino
-
-
-     */
-
 }

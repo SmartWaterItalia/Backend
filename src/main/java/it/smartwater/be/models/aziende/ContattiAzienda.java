@@ -18,22 +18,17 @@ public class ContattiAzienda {
     @Column(name = "id")
     private long id;
 
-    @Column(name="contattoMail")
-    private String contattoMail;
+    @Column(name="mail", unique = true)
+    @NotNull
+    private String mail;
 
-    @Column(name="contattoWeb")
-    private String contattoWeb;
+    @Column(name="website")
+    private String website;
+
+    @Column(name="fax")
+    private String fax;
 
     @Column(name="telefono")
     private String telefono;
-
-    @Column(name="idAzienda")
-    @NotNull
-    private long idAzienda;
-
-
-    @OneToOne
-    @JoinColumn(name = "idAzienda", referencedColumnName = "id", table = "azienda")
-    private Azienda azienda;
 
 }

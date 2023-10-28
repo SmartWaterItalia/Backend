@@ -18,18 +18,18 @@ public class Utente {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "nome")
+    @Column(name = "nome", length = 32)
     @NotNull
     private String nome;
 
-    @Column(name = "cognome")
+    @Column(name = "cognome", length = 32)
     @NotNull
     private String cognome;
 
-    @Column(name = "nickname")
+    @Column(name = "nickname", length = 64)
     private String nickname;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
     @NotNull
     private String email;
 

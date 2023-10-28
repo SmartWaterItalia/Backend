@@ -18,18 +18,22 @@ public class ImmagineValutazione {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "nome")
+    @Column(name = "nome", length = 16)
     private String nome;
 
-    @Column(name = "descrizione")
+    @Column(name = "descrizione", length = 128)
     private String descrizione;
 
-    @Column(name = "path")
+    @Column(name = "path", unique = true)
     @NotNull
     private String path;
 
     @Column(name = "idValutazione")
     @NotNull
-    private int idValutazione;
+    private Long idValutazione;
+
+    @JoinColumn(name = "idValutazione", referencedColumnName = "id", table = "valutazione")
+    @OneToOne
+    private Valutazione valutazione;
 
 }

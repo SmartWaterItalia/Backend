@@ -28,7 +28,7 @@ public class Sorgente {
 
     @Column(name = "idTipo")
     @NotNull
-    private long idTipo;
+    private int idTipo;
 
     @OneToOne
     @JoinColumn(name = "idTipo", referencedColumnName = "id", table = "tiposorgente")

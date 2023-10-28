@@ -18,12 +18,12 @@ public class Valutazione {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Long id;
 
-    @Column(name = "titolo")
+    @Column(name = "titolo", length = 64)
     private String titolo;
 
-    @Column(name = "descrizione")
+    @Column(name = "descrizione", length = 1024)
     private String descrizione;
 
     @Column(name = "data")

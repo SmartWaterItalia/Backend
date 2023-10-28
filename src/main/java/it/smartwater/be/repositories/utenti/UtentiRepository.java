@@ -1,4 +1,4 @@
-package it.smartwater.be.repositories;
+package it.smartwater.be.repositories.utenti;
 
 import it.smartwater.be.models.utenti.Utente;
 import org.springframework.data.domain.Page;

@@ -20,11 +20,11 @@ public class PermessoTecnico {
 
     @Column(name="idTipoTecnico")
     @NotNull
-    private long idTipoTecnico;
+    private int idTipoTecnico;
 
     @Column(name="idSicurezza")
     @NotNull
-    private long idSicurezza;
+    private int idSicurezza;
 
 
     @OneToOne

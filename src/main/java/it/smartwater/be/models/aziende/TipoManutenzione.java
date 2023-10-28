@@ -16,7 +16,7 @@ public class TipoManutenzione {
     @Id
     @GeneratedValue
     @Column(name = "id")
-    private long id;
+    private int id;
 
     @Column(name="nome")
     @NotNull
