@@ -1,5 +1,8 @@
 package it.smartwater.be.controllers;
 
+import it.smartwater.be.exceptions.globals.BadRequestException;
+import it.smartwater.be.exceptions.globals.NoContentException;
+import it.smartwater.be.exceptions.globals.NotFoundException;
 import it.smartwater.be.models.utenti.Utente;
 import it.smartwater.be.repositories.utenti.UtentiRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,15 +21,28 @@ public abstract class CrudController<T, ID> {
     }
 
     public Iterable<T> findAll() {
-        return repository.findAll();
+        Iterable<T> list = repository.findAll();
+
+        if (!list.iterator().hasNext())
+            throw new NoContentException();
+
+        return list;
     }
 
     public void save(@RequestBody T entity) {
+        if (entity == null)
+            throw new BadRequestException("Entity is null");
+
         this.repository.save(entity);
     }
 
     public T findById(@PathVariable ID id) {
-        return this.repository.findById(id).orElse(null);
+        T entity = this.repository.findById(id).orElse(null);
+
+        if (entity == null)
+            throw new NotFoundException();
+
+        return entity;
     }
 
     public long count() {
@@ -34,28 +50,45 @@ public abstract class CrudController<T, ID> {
     }
 
     public void deleteById(@PathVariable ID id) {
+        if (id == null)
+            throw new BadRequestException("Id is null");
+
         this.repository.deleteById(id);
     }
 
     public void delete(@RequestBody T entity) {
+        if (entity == null)
+            throw new BadRequestException();
+
         this.repository.delete(entity);
     }
 
     public void deleteAllById(@RequestBody List<ID> ids) {
-        for (ID id : ids) {
+        if (ids == null)
+            throw new BadRequestException();
+
+        for (ID id : ids)
             this.repository.deleteById(id);
-        }
     }
 
     public void deleteAll(@RequestBody List<T> entities) {
+        if (entities == null)
+            throw new BadRequestException();
+
         this.repository.deleteAll(entities);
     }
 
     public void saveAllById(@RequestBody Iterable<T> entities) {
+        if (entities == null)
+            throw new BadRequestException();
+
         this.repository.saveAll(entities);
     }
 
     public void saveAll(@RequestBody List<T> entities) {
+        if (entities == null)
+            throw new BadRequestException();
+
         this.repository.saveAll(entities);
     }
 
